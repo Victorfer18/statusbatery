@@ -71,6 +71,7 @@
         function updateBatteryStatus() {
             console.log("Status da bateria: " + battery.level * 100 + " %");
             status(battery.level * 100 || 100)
+            alert(battery.level)
             if (battery.charging) {
                 console.log("A bateria está carregando");
             }
