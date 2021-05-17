@@ -65,34 +65,10 @@
             cor(s)
             por(s)
         }
-
-        var battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery;
-
-        function updateBatteryStatus() {
-            console.log("Status da bateria: " + battery.level * 100 + " %");
-            status(battery.level * 100 || 100)
-            alert(battery.level)
-            if (battery.charging) {
-                console.log("A bateria está carregando");
-            }
-        }
-
-        battery.addEventListener("chargingchange", updateBatteryStatus);
-        battery.addEventListener("levelchange", updateBatteryStatus);
-        updateBatteryStatus();
-
-        function ida(i) {
-            // let $idades = document.querySelector(".idade")
-            if (i < 18) {
-                return 'De menor'
-            } else if (i > 60) {
-                return 'Idoso'
-            } else {
-                return 'De maior'
-            }
-
-        }
-        console.log(ida(10))
+        
+        navigator.getBattery().then(x => {
+            alert(x.level)
+        }) 
 
     </script>
 </body>
