@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
 </head>
 
 <body>
     <div class="container">
-        <img class="icon lua" src="lua_escura.png" onclick="dark_black()">
-        <img class="icon sol" src="sol_branco.png" onclick="dark_white()">
+        <img class="icon lua" src="./img/lua_escura.png" onclick="dark_black()">
+        <img class="icon sol" src="./img/sol_branco.png" onclick="dark_white()">
         <div class="circles">
             <div class="circle1">
             </div>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="conector"></div>
                     </div>
-                    <h1>82%</h1>
+                    <h1 class="nivel-js">82%</h1>
                 </div>
                 
             </div>
@@ -54,7 +54,23 @@
             let $quem = document.querySelector('.cor-js')
             $quem.style.width = t + '%'
         }
-        console.log(cor(4))
+        console.log(cor(50))
+
+        function por(p){
+            let $nivel = document.querySelector('.nivel-js')
+            $nivel.innerHTML = p + '%'
+        }
+        console.log(por(18))
+
+        function status(s){
+            cor(s)
+            por(s)
+        }
+        
+        console.log(status(100))
+
+        status(navigator.battery || 100)
+        console.log(navigator.battery)
 
         function ida(i){
             // let $idades = document.querySelector(".idade")
