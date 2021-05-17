@@ -60,17 +60,11 @@
             let $nivel = document.querySelector('.nivel-js')
             $nivel.innerHTML = p + '%'
         }
-        console.log(por(18))
 
         function status(s) {
             cor(s)
             por(s)
         }
-
-        console.log(status(100))
-
-        
-        console.log(navigator.battery)
 
         var battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery;
 
