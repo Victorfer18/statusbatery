@@ -18,10 +18,10 @@
             <div class="circle1">
             </div>
             <div class="cirlce2">
-            </div>    
+            </div>
         </div>
-        
-        
+
+
         <div class="card">
             <div class="box">
                 <div>
@@ -34,7 +34,7 @@
                     </div>
                     <h1 class="nivel-js">82%</h1>
                 </div>
-                
+
             </div>
         </div>
 
@@ -49,39 +49,80 @@
         function dark_white() {
             dark_black()
         }
-        
-        function cor(t){
+
+        function cor(t) {
             let $quem = document.querySelector('.cor-js')
             $quem.style.width = t + '%'
         }
         console.log(cor(50))
 
-        function por(p){
+        function por(p) {
             let $nivel = document.querySelector('.nivel-js')
             $nivel.innerHTML = p + '%'
         }
         console.log(por(18))
 
-        function status(s){
+        function status(s) {
             cor(s)
             por(s)
         }
-        
+
         console.log(status(100))
 
-        status(navigator.battery || 100)
-        console.log(navigator.battery)
+        navigator.getBattery().then(function (battery) {
+            function updateAllBatteryInfo() {
+                updateChargeInfo();
+                updateLevelInfo();
+                updateChargingInfo();
+                updateDischargingInfo();
+            }
+            updateAllBatteryInfo();
 
-        function ida(i){
+            battery.addEventListener('chargingchange', function () {
+                updateChargeInfo();
+            });
+            function updateChargeInfo() {
+                console.log("Battery charging? "
+                    + (battery.charging ? "Yes" : "No"));
+            }
+
+            battery.addEventListener('levelchange', function () {
+                updateLevelInfo();
+            });
+            function updateLevelInfo() {
+                console.log("Battery level: "
+                    + battery.level * 100 + "%");
+            }
+
+            battery.addEventListener('chargingtimechange', function () {
+                updateChargingInfo();
+            });
+            function updateChargingInfo() {
+                console.log("Battery charging time: "
+                    + battery.chargingTime + " seconds");
+            }
+
+            battery.addEventListener('dischargingtimechange', function () {
+                updateDischargingInfo();
+            });
+            function updateDischargingInfo() {
+                console.log("Battery discharging time: "
+                    + battery.dischargingTime + " seconds");
+            }
+
+        })
+
+
+        function ida(i) {
             // let $idades = document.querySelector(".idade")
-            if (i < 18){
+            if (i < 18) {
                 return 'De menor'
-            }else if (i > 60){
+            } else if (i > 60) {
                 return 'Idoso'
-            }else{
+            } else {
                 return 'De maior'
             }
-            
+
         }
         console.log(ida(10))
 
