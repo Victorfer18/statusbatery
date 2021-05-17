@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <img class="icon lua" src="lua_escura.png" onclick="dark_black()">
+        <img class="icon sol" src="sol_branco.png" onclick="dark_white()">
+        <div class="circles">
+            <div class="circle1">
+            </div>
+            <div class="cirlce2">
+            </div>    
+        </div>
+        
+        
+        <div class="card">
+            <div class="box">
+                <div>
+                    <h3>Battery</h3>
+                    <div class="caixa">
+                        <div class="batery">
+                            <div class="cor cor-js"></div>
+                        </div>
+                        <div class="conector"></div>
+                    </div>
+                    <h1>82%</h1>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+        function dark_black() {
+            const elemento = document.querySelector('body')
+            elemento.classList.toggle('dark-mode')
+
+        }
+        function dark_white() {
+            dark_black()
+        }
+        
+        function cor(t){
+            let $quem = document.querySelector('.cor-js')
+            $quem.style.width = t + '%'
+        }
+        console.log(cor(4))
+
+        function ida(i){
+            // let $idades = document.querySelector(".idade")
+            if (i < 18){
+                return 'De menor'
+            }else if (i > 60){
+                return 'Idoso'
+            }else{
+                return 'De maior'
+            }
+            
+        }
+        console.log(ida(10))
+
+    </script>
+</body>
+
+</html>

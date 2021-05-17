@@ -1,0 +1,141 @@
+*{
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: rgb(199, 199, 199);
+    color: rgb(48, 48, 48);
+    
+}
+body.dark-mode{
+    background-color: #141623;
+    color: #ffffff;
+
+}
+
+.sol{
+    display: none;
+}
+
+body.dark-mode .lua{
+    display: none;
+}
+
+body.dark-mode .sol{
+    display: block;
+}
+
+body.dark-mode .batery{
+    border-color: #ffffff;
+
+}
+
+body.dark-mode .conector{
+    border-color: #ffffff;
+
+}
+
+body.dark-mode .cor{
+    background-color: #0014c7;
+
+}
+
+.container{
+
+}
+
+.icon{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+.card{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    display: flex;
+    background-color: rgba(122, 122, 122, 0.3);
+    width: 300px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+}
+
+.circles{
+    
+}
+
+.box h3{
+    display: flex;
+    justify-content: center;
+}
+
+.box h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.caixa{
+    position: relative;
+}
+
+.batery{
+    border: 4px solid black;
+    border-radius: 15px;
+    width: 150px;
+    height: 75px;
+    padding-right: 12px;
+}
+
+.cor{
+    background-color: #0f5;
+    width: 82%;
+    height: 55px;
+    margin: 6px;
+    border-radius: 10px;
+}
+
+
+.conector{
+    position: absolute;
+    padding-top: 15px;
+    border: 3px solid black;
+    border-radius: 15px;
+    margin-inline: 95px;
+    right: -100px;
+    top: 30px;
+    
+}
+
+.circle1{
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    border-radius: 100%;
+    background: linear-gradient(rgb(89, 0, 255), rgb(0, 58, 173), #0f5);
+    height: 400px;
+    width: 400px;
+}
+
+.cirlce2{
+    position: absolute;
+    right: 25%;
+    bottom: 5%;
+    border-radius: 100%;
+    background: linear-gradient(45deg,#c00, #05f, #0f5);
+    height: 400px;
+    width: 400px;
+    z-index: -1;
+}
+
