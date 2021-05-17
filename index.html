@@ -67,7 +67,7 @@
         }
         
         navigator.getBattery().then(x => {
-            alert(x.level)
+            status(x.level * 100)
         }) 
 
     </script>
