@@ -69,49 +69,22 @@
 
         console.log(status(100))
 
-        navigator.getBattery().then(function (battery) {
-            function updateAllBatteryInfo() {
-                updateChargeInfo();
-                updateLevelInfo();
-                updateChargingInfo();
-                updateDischargingInfo();
+        
+        console.log(navigator.battery)
+
+        var battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery;
+
+        function updateBatteryStatus() {
+            console.log("Status da bateria: " + battery.level * 100 + " %");
+            status(battery.level * 100 || 100)
+            if (battery.charging) {
+                console.log("A bateria está carregando");
             }
-            updateAllBatteryInfo();
+        }
 
-            battery.addEventListener('chargingchange', function () {
-                updateChargeInfo();
-            });
-            function updateChargeInfo() {
-                console.log("Battery charging? "
-                    + (battery.charging ? "Yes" : "No"));
-            }
-
-            battery.addEventListener('levelchange', function () {
-                updateLevelInfo();
-            });
-            function updateLevelInfo() {
-                console.log("Battery level: "
-                    + battery.level * 100 + "%");
-            }
-
-            battery.addEventListener('chargingtimechange', function () {
-                updateChargingInfo();
-            });
-            function updateChargingInfo() {
-                console.log("Battery charging time: "
-                    + battery.chargingTime + " seconds");
-            }
-
-            battery.addEventListener('dischargingtimechange', function () {
-                updateDischargingInfo();
-            });
-            function updateDischargingInfo() {
-                console.log("Battery discharging time: "
-                    + battery.dischargingTime + " seconds");
-            }
-
-        })
-
+        battery.addEventListener("chargingchange", updateBatteryStatus);
+        battery.addEventListener("levelchange", updateBatteryStatus);
+        updateBatteryStatus();
 
         function ida(i) {
             // let $idades = document.querySelector(".idade")
